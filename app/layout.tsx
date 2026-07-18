@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 
+import { CSSImportEnhancer } from "@/components/css-import-enhancer";
 import { PWARegistrar } from "@/components/pwa-registrar";
 import "../styles/fonts.css";
 import "./globals.css";
@@ -46,6 +47,7 @@ export default function RootLayout({
       </head>
       <body>
         <PWARegistrar />
+        <CSSImportEnhancer />
         {children}
         {/* 手机横屏提示：网页无法阻止浏览器转屏（部分国产浏览器会自动横屏），
             纯 CSS 检测"触屏+横屏+矮视口"时盖全屏提示，转回竖屏自动消失。
